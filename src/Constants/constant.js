@@ -1,0 +1,1 @@
+export const API_URIS = 'https://dog.ceo/api/breeds/image/random';
