@@ -1,4 +1,5 @@
 import React from 'react';
+import {Swipeable} from "react-swipeable";
 
 let ProfilePic = (props) => {
 
@@ -6,11 +7,16 @@ let ProfilePic = (props) => {
 
 		<div className="content">
 
-			<img className="straightup"
-				 src={props.imageSource}
-				 alt="Dog Image"
-			/>
-
+			<Swipeable
+				trackMouse
+				preventDefaultTouchmoveEvent
+				onSwipedLeft={ () => props.swipeHandler('right') }
+				onSwipedRight={ () => props.swipeHandler('left')} >
+				<img className="straightup"
+					src={props.imageSource}
+					alt="Dog Image"
+				/>
+			</Swipeable>
 		</div>
 	);
 

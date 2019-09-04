@@ -12,7 +12,7 @@ let Header = (props) => {
 				props.heading == 'Timeline'
 
 				?
-					<a href="#" className="button" onClick={props.backClickHandler}>
+					<a className="button backbutton" onClick={props.backClickHandler}>
 						<i className="fa fa-arrow-left"></i>
 						Back
 					</a>

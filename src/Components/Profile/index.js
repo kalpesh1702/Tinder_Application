@@ -48,15 +48,15 @@ class Profile extends Component {
 
 	likeHandler = (event) => {
 
-		if(event.target.name == 'timeline'){
+		if(event.currentTarget.name == 'timeline'){
 			this.props.history.push('/timeline');
 		}
 
-		if(event.target.name == 'like'){
+		if(event.currentTarget.name == 'like'){
 
 			let fetchAllLikes = JSON.parse(localStorage.getItem("likesInfo") || "[]");
 
-			fetchAllLikes.push({
+			fetchAllLikes.unshift({
 				'src' : this.state.profilepic,
 				'time' : new Date()
 			});
@@ -74,6 +74,30 @@ class Profile extends Component {
 		console.log(JSON.parse(localStorage.getItem("likesInfo") || "[]"));
 	}
 
+	swipeHandler = (direction) => {
+
+		if(direction == 'right'){
+
+			let fetchAllLikes = JSON.parse(localStorage.getItem("likesInfo") || "[]");
+
+			fetchAllLikes.unshift({
+				'src' : this.state.profilepic,
+				'time' : new Date()
+			});
+
+			localStorage.setItem("likesInfo", JSON.stringify(fetchAllLikes));
+		}
+
+		this.setState({
+			'isLoading' : true
+		});
+
+		this.fetchProfilePicApi();
+
+		console.log(JSON.parse(localStorage.getItem("likesInfo") || "[]"));
+
+	}
+
 	render(){
 
 		return(
@@ -87,7 +111,10 @@ class Profile extends Component {
 					?
 						<Loader />
 					:
-						<ProfilePic imageSource={this.state.profilepic} />
+						<ProfilePic
+							swipeHandler={this.swipeHandler}
+							imageSource={this.state.profilepic}
+						/>
 				}
 
 

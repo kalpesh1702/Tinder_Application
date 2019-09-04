@@ -142,4 +142,33 @@ a.button:hover {
 }
 .fa-arrow-left{
 	padding-right: 10px;
+	cursor:pointer;
+}
+.backbutton{
+	cursor:pointer;
+}
+.imageDesign{
+	height: 130px;
+    width: 180px;
+}
+.likedList{
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+.listBox{
+	max-height:200px;
+	display: flex;
+	border: 2px solid #f1f1f1;
+	border-left:none;
+}
+.timeBox{
+	margin: auto;
+}
+.straightup{
+	width:100%;
+	height: 350px;
+}
+.dataNotFound{
+    text-align: center;
+    margin-top: 5%;
 }

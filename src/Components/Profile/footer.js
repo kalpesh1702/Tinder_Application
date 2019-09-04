@@ -7,13 +7,13 @@ let Footer = (props) => {
 
 		<div className="icon-bar">
 
-			<a href="#" name='like' onClick={props.likeHandler}>
+			<a name='like' onClick={props.likeHandler}>
 				<IoIosCheckmarkCircleOutline />
 			</a>
-			<a href="#" name='timeline' onClick={props.likeHandler}>
+			<a name='timeline' onClick={props.likeHandler}>
 				<IoIosHeartEmpty />
 			</a>
-			<a href="#" name='dislike' onClick={props.likeHandler}>
+			<a name='dislike' onClick={props.likeHandler}>
 				<IoIosCloseCircleOutline />
 			</a>
 
